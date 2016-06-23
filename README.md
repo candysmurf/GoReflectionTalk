@@ -16,8 +16,8 @@ http://blog.golang.org/laws-of-reflection
 
 ### Basics
 
-[Struct Types](basics/struct/struct.go) ([Go Playground](https://play.golang.org/p/V9Lf75Ajaa))  
-[Slices](basics/slice/slice.go) ([Go Playground](https://play.golang.org/p/ISWgNKWIxM))  
+[Struct Types](basics/struct/struct.go) ([Go Playground](https://play.golang.org/p/V9Lf75Ajaa)) Example shows how to reflect over a struct type value.  
+[Slices](basics/slice/slice.go) ([Go Playground](https://play.golang.org/p/ISWgNKWIxM)) Example shows how to reflect over a slice of struct type values.  
 [Maps](basics/map/map.go) ([Go Playground](https://play.golang.org/p/BNWVXx4QTo))  
 [Pointers](basics/pointer/pointer.go) ([Go Playground](https://play.golang.org/p/0bSbKUJk19))  
 

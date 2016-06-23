@@ -1,6 +1,12 @@
+## Emily Gu
+
+Emily Gu currently works for Intel Corporation as a cloud software engineer in the Software Defined Infrastructure (SDI-X) group and is a graduate from East Carolina University. Emily has been a software developer for over 15 years working on various system level projects. She has experience with Cloud and Big Data systems. When Emily is not writing code, she can be found traveling the world looking for and indulging in tea.
+
+[Twitter](https://twitter.com/CandySmurfy)
+
 ## Reflection - Standard Library
 
-Reflection is the ability to inspect a value to derive type or other meta-data. Reflection can give our program incredible flexibility to work with data of different types or create values on the fly. Reflection is critical for the encoding and decoding of data.
+Developers are often told reflection is bad and should be avoided. However, when reflection can help reduce the amount of code needed to solve a problem, it should be considered. Reducing complexity while preserving maintainability must always be a priority. Reflection can be a tool that helps makes this possible. In this talk I am going to show you the power and elegance of the reflection package.
 
 ## Notes
 
@@ -16,9 +22,16 @@ http://blog.golang.org/laws-of-reflection
 
 ### Basics
 
-[Struct Types](basics/struct/struct.go) ([Go Playground](https://play.golang.org/p/V9Lf75Ajaa)) Example shows how to reflect over a struct type value.  
-[Slices](basics/slice/slice.go) ([Go Playground](https://play.golang.org/p/ISWgNKWIxM)) Example shows how to reflect over a slice of struct type values.  
+Example shows how to reflect over a struct type value.  
+[Struct Types](basics/struct/struct.go) ([Go Playground](https://play.golang.org/p/V9Lf75Ajaa))    
+
+Example shows how to reflect over a slice of struct type values.  
+[Slices](basics/slice/slice.go) ([Go Playground](https://play.golang.org/p/ISWgNKWIxM))  
+
+Example shows how to reflect over a map of struct type values.  
 [Maps](basics/map/map.go) ([Go Playground](https://play.golang.org/p/BNWVXx4QTo))  
+
+Example shows how to reflect over a struct type pointer.  
 [Pointers](basics/pointer/pointer.go) ([Go Playground](https://play.golang.org/p/0bSbKUJk19))  
 
 ### Interfaces

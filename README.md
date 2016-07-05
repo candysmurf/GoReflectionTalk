@@ -4,6 +4,8 @@ Developers are often told reflection is bad and should be avoided. However, when
 
 ## Links
 
+https://candysmurf.github.io/GoReflectionTalk
+
 http://blog.golang.org/laws-of-reflection
 
 ## Code Review

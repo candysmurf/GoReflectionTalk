@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>The Power and Elegance of Reflection</title>
+      <meta name="description" content="GopherCon 2016">
+      <meta name="author" content="Emily Gu">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+      <!-- favicon icons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+      <link rel="manifest" href="favicon/manifest.json">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+      <meta name="theme-color" content="#ffffff">
+      <!-- end favicon code -->
+      <link rel="stylesheet" href="css/reveal.css">
+      <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+      <!-- Code syntax highlighting -->
+      <link rel="stylesheet" href="lib/css/zenburn.css">
+      <!-- Printing and PDF exports -->
+      <script>
+         var link = document.createElement( 'link' );
+         link.rel = 'stylesheet';
+         link.type = 'text/css';
+         link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+         document.getElementsByTagName( 'head' )[0].appendChild( link );
+      });
+      </script>
+      <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+      <![endif]-->
+      <!-- these are my custom styles. remember that slide sizes scale, so try to use percentages. -->
+      <style>
+         p.alignLeft {
+         text-align: left;
+         }
+         span.orange, a.orange {
+         color: orange;
+         outline-color: gray;
+         }
+         div.innovation ul li {
+         margin-bottom:12px;
+         }
+         figcaption {
+         font-size:.8em;
+         }
+         p.miscItems {
+         font-size:1.2em;
+         }
+         .slides section h3 {
+         color: orange !important; outline: gray;
+         }
+         .slides img.shortened {
+         max-width: 80%;
+         max-height: 80%;
+         }
+         #upcoming-slide .label {
+         color: #444 !important
+         }
+         ul.credits li {
+         font-size: .6em;
+         }
+      </style>
+      <!-- Note: Make artboard sizes about 775px wide X 445px tall. If the image appears as a vertical navigation, add a class of "shortened" to the image element to reduce its size to 80% -->
+   </head>
+   <body>
+      <div class="reveal innovation">
+         <!-- Any section element inside of this container is displayed as a slide -->
+         <div class="slides">
+            <section>
+               <h1><span class="orange">Reflection</span><br/>Power And Elegance</h1>
+               <h3>GopherCon 2016</h3>
+               <p>
+                  <small>Created by <a href="https://github.com/candysmurf">Emily Gu</a> / <a href="https://twitter.com/CandySmurfy">@CandySmurfy</a></small>
+               </p>
+               <p><small>https://github.com/candysmurf/GoReflectionTalk</small></p>
+               <aside class="notes">
+                  <p>- I'm working at Intel SDI-X group</p>
+                  <p>- My first time in GohpherCon.</p>
+                  <p>- First time giving this presentation</p>
+               </aside>
+            </section>
+            <section>
+                <h2>Keyboard Shortcuts</h2>
+                <table>
+                    <tr>
+                      <td><b>Full Screen</b></td>
+                      <td>F</td>
+                    </tr>
+                    <tr>
+                      <td><b>Next Slide</b></td>
+                      <td>Space bar</td>
+                    </tr>
+                    <tr>
+                      <td><b>Slide Notes</b></td>
+                      <td>S</td>
+                    </tr>
+                    <tr>
+                      <td><b>Thumbnail View</b></td>
+                      <td>Esc</td>
+                    </tr>
+                </table>
+                <p><small>View online at <a href="https://github.com/candysmurf/GoReflectionTalk">https://github.com/candysmurf/GoReflectionTalk </a></small><br/>
+                <small><i><b>Note:</b> Some slides move down instead of to the side, so use the space bar to advance slides.</i></small></p>
+              
+                <aside class="notes">
+                <p>This is the speaker notes view.</p>
+                <p>Notice the navigation arrows in the lower corner.</p>
+                </aside>
+            </section> 
+            <section>
+              <h2>About Me</h2>
+               <blockquote>
+                 I currently work for Intel Corporation as a cloud software engineer in the Software Defined Infrastructure (SDI-X) Emerging Tech group.
+               </blockquote>
+               <blockquote class="fragment">
+                 William Kennedy is my teacher for Go. His "mechanical sympathy" truly inspired me.
+               </blockquote>
+               <blockquote class="fragment">
+                 Prior to Go, I used Java, JEE, Spring Framework, RabbitMQ, Cassandra, Logstash, Elasticsearch...
+               </blockquote>
+              <blockquote class="fragment">
+                 Our today's focus is Go Reflection
+               </blockquote>
+            </section>
+            <section>
+              <h2>Reflection?</h2>
+              <img src="media/gophers/gopher-ok-no.png" />
+              <aside class="notes">
+                <p>- Reflection is perserved to not be used due to its performance.</p>
+                <p>- Raise your hand if you vote No.</p>
+              </aside>
+            </section>
+             <section>
+               <h2>Experts Said</h2>
+                <blockquote>"
+                Compared to a disk seek or network transfer, the cost of reflection will be negligible."
+               <br/><br/>&mdash; Dave Cheney
+               </blockquote>
+               <br/><br/>
+               <blockquote>"
+                Integrity, Readability, Simplicity first!
+                "
+               <br/><br/>&mdash; William Kennedy
+               </blockquote>
+               <aside class="notes">
+                  <p>- yes and no.</p>
+               </aside>
+            </section>
+            <section>
+               <h2>"Code Integrity"</h2>
+               <ul>
+                 <li>Read and write to a correct memory address</li>
+                 <li>Reliable functional behaviors</li> 
+               </ul>
+               <br/>
+               <img src="media/gophers/address-bus.png" width="700" height="300"/>
+               <blockquote class="fragment">
+                Code integrity is the default behavior of Reflection.
+               </blockquote>
+               <aside class="notes">
+                  <p>- including authentication and authorization.</p>
+               </aside>
+            </section>
+            <section>
+               <h2>"Code Readbility"</h2>
+               <h3>Lines and Complexity of Code</h3>
+              <pre><code>
+                func MultiplyBy2(x int) int {
+                  return x * 2
+                }
+
+                func MultiplyBy2(x int) int {
+                  return x << 1
+                }
+              </code></pre>
+              <blockquote class="fragment">
+                 "Premature Optimizations and Programming Myths are The Root of all Evil" 
+                 <br/><small>&mdash; Alvaro Videla 2015</small>
+              </blockquote>
+              <blockquote class="fragment">
+                 Reflection let you write concise code.
+               </blockquote>
+               <aside class="notes">
+                  <p>- first one can be picked up by anyone even a non technical person.</p>
+                  <p>- second one is faster but it's hard to understand.</p>
+                  <p>- Should we sacrify readability for the performance?</p>
+                  <p>- Reflection, code is simple and short, easy to read</p>
+               </aside>
+            </section>
+            <section>
+               <h2>"Code Simplicity"</h2>
+               <h3>Algorithem Efficiency</h3>
+               <img src="media/gophers/complexity.png" height="200" />
+               <blockquote class="fragment">
+                 Reflection let you write general purpose code for Data Transformation. Otherwise, you'll
+                 have to write code for every type.
+               </blockquote>
+               <aside class="notes">
+                  <p>- good design.</p>
+                  <p>- efficient algorithm.</p>
+                  <p>- good use of resources.</p>
+                  <p>- reuse and extendability.</p>
+               </aside>
+            </section> 
+            <section>
+               <h2>Reflection</h2>
+               <section data-background="media/vectors/innovation_scalability.svg">
+               <blockquote cite="https://en.wikipedia.org/wiki/Reflection_(computer_programming)">"
+               In computer science, reflection is the ability of a computer program to examine,
+               introspect, and modify its own structure and behavior at runtime."
+               <br/><br/>&mdash;@Wikipedia
+               </blockquote>
+               <aside class="notes">
+                  <p>- inspection of meta-data, struct, fields, values, maps, interfaces, methods, functions at runtime without knowing the names</p>
+                  <p>- instantiation of new objects and invocation of methods</p>
+               </aside>
+              </section>
+              <section data-background="media/vectors/innovation_scalability.svg">
+                <h3>Reflection - Key Enabler</h3>
+                <ul>
+                <li class="fragment">Object Relational Mapping (ORM)</li>
+                <li class="fragment">Dependency Injection Framework (IoC)</li>
+                <li class="fragment">Plugin Framework</li>
+                <li class="fragment">Data Transformation</li>
+                <li class="fragment">Testing Framework</li>
+                </ul>
+              
+                <pre class="fragment"><code>
+                "fmt"
+                "encoding/json"
+                "encoding/xml"
+                "text/template"
+                "html/template"
+                </code></pre>
+               </section>
+               <section>
+                  <object id="animate" data="media/vectors/cat-scan.svg" type="image/svg+xml">
+                    <img src="media/gophers/cat-scan.png" />
+                  </object>
+                  <aside class="notes">
+                      <p>- cat scan.</p>
+                  </aside>
+              </section>
+            </section>
+            <section data-background="media/vectors/innovation_scalability.svg"/>
+                <h2>Snug into Reflection</h2>
+                <section>
+                    <h3>Reflection Basics</h3>
+                    <ul>
+                      <li>Map</li>
+                      <li>Pointer</li>
+                      <li>Slice</li>
+                      <li>Struct</li>
+                    </ul>
+                    <br/><br/>
+                    <a target="blank" href="https://github.com/candysmurf/GoReflectionTalk/tree/master/basics"><img src="media/gophers/21.png"  height="200px" width="350px"/></a></figcaption>
+                    <aside class="notes">
+                      <p>- Learn Go Reflection.</p>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Reflection Interface</h3>
+                    <ul>
+                      <li>Map</li>
+                      <li>Pointer</li>
+                      <li>Slice</li>
+                      <li>Struct</li>
+                    </ul>
+                    <br/><br/>
+                    <a target="blank" href="https://github.com/candysmurf/GoReflectionTalk/tree/master/interface"><img src="media/gophers/19.png"  height="200px" width="350px"/></a>
+                </section>
+                <section>
+                    <h3>Reflection Inspection</h3>
+                    <ul>
+                      <li>Integer</li>
+                      <li>Struct</li>
+                    </ul>
+                    <br/><br/>
+                    <a target="blank" href="https://github.com/candysmurf/GoReflectionTalk/tree/master/basics"><img src="media/gophers/22.png"  height="200px" width="350px"/></a>
+                </section>
+                <section>
+                    <blockquote>
+                      Go Reflection package provides robust operations on types and values during the run-time.
+                    </blockquote>
+                    <br/>
+                    <ul>
+                      <li><a href="https://blog.golang.org/laws-of-reflection">Follow the Law of Reflection</a></li>
+                      <li><a href="https://jimmyfrasche.github.io/go-reflection-codex/">Go Reflection Codex</a></li>
+                    </ul>
+                </section>
+              </section>
+              <section>
+               <h2>Reflection Case Study</h2>
+               <section data-background="media/vectors/innovation_code.svg">
+                  <h3>snap-plugin-collector-cassandra</h3>
+                  <table>
+                     <tr>
+                        <td><b>org.apache.cassandra.metrics:</b></td>
+                        <td><a target="blank" href="http://codebeautify.org/xmlviewer/cb6f6a00#">Domain</a></td>
+                     </tr>
+                  </table>
+                  <pre><code>
+                  // XMLServer represents Server element
+                  type XMLServer struct {
+                    XMLName xml.Name  `xml:"Server"`
+                    Domain  XMLDomain `xml:"Domain"`
+                  }
+                  // XMLDomain represents Domain element
+                  type XMLDomain struct {
+                    XMLName xml.Name   `xml:"Domain"`
+                    MBeans  []XMLMBean `xml:"MBean"`
+                  }
+                  // XMLMBean represents MBean element
+                  type XMLMBean struct {
+                    XMLName    xml.Name `xml:"MBean"`
+                    Objectname string   `xml:"objectname,attr"`
+                  }
+                  </code></pre>
+                  <aside class="notes">
+                     <p>- Fixed representation, no reflection is needed.</p>
+                  </aside>
+               </section>
+               <section data-background="media/vectors/innovation_code.svg">
+                  <h3>snap-plugin-collector-cassandra</h3>
+                  <table>
+                     <tr>
+                        <td><b>Cache.KeyCache:</b></td>
+                        <td><a target="blank" href="http://codebeautify.org/xmlviewer/cb649bcb">FifteenMinuteHitRate</a></td>
+                     </tr>
+                     <tr>
+                        <td><b>ClientRequest.CASRead:</b></td>
+                        <td><a target="blank" href="http://codebeautify.org/xmlviewer/cb338e40">ContentionHistogram</a></td>
+                     </tr>
+                  </table>
+                  <pre><code>
+                //XMLAttributes represents Attribute elements
+                type XMLAttributes struct {
+                  XMLName    xml.Name       `xml:"MBean"`
+                  Attributes []XMLAttribute `xml:"Attribute"`
+                }
+                
+                // XMLAttribute represents Attribute element
+                type XMLAttribute struct {
+                  XMLName xml.Name `xml:"Attribute"`
+                  Name    string   `xml:"name,attr"`
+                  Type    string   `xml:"type,attr"`
+                  Value   float64  `xml:"value,attr"`
+                }
+                  </code></pre>
+                  <aside class="notes">
+                     <p>- Fixed representation.</p>
+                  </aside>
+               </section>
+              </section>
+              <section data-background="media/vectors/innovation_code.svg"/>
+                <h2>Reflection Case Study</h2>
+                <section>
+                    <h3>snap-plugin-collector-elasticsearch</h3>
+                    <table>
+                     <tr>
+                        <td><b>ES cluster Health:</b></td>
+                        <td><a target="blank" href="http://codebeautify.org/jsonviewer/cba96b27">Cluster JSON</a></td>
+                     </tr>
+                    <tr>
+                        <td><b>ES Cluster Design:</b></td>
+                        <td><a target="blank" href="https://github.com/intelsdi-x/snap-plugin-collector-elasticsearch/blob/master/elasticsearch/cluster.go#L44-L60">Cluster Struct</a></td>
+                     </tr>
+                     <tr>
+                        <td><b>ES node Stats:</b></td>
+                        <td><a target="blank" href="http://codebeautify.org/jsonviewer/cb292d2c">Node JSON</a></td>
+                     </tr>
+                     <tr>
+                       <td><b>ES Node Design:</b></td>
+                       <td><a target="blank" href="https://github.com/intelsdi-x/snap-plugin-collector-elasticsearch/blob/master/elasticsearch/node.go#L22-L429">Node Structs</a></td>
+                    </tr>
+                    <tr>
+                      <td><b>Node Recursive Reflection:</b></td>
+                      <td><a target="blank", href="https://github.com/intelsdi-x/snap-plugin-collector-elasticsearch/blob/master/elasticsearch/nodeClient.go#L115-L174">59 LOC</a></td>
+                    </tr>
+                    </table>
+                    <aside class="notes">
+                      <p>- Arbitrary representation.</p>
+                      <p>- Changing representation.</p>
+                      <p>- Runtime update.</p>
+                    </aside>
+                </section>
+              </section>
+              <section data-background="media/vectors/innovation_code.svg"/>
+              <h2>Reflection Case Study</h2>
+              <section>
+                  <h3>snap-plugin-collector-redfish</h3>
+                  <table>
+                    <tr>
+                      <td><b>Redfish API:</b></td>
+                      <td><a target="blank" href="http://redfish.dmtf.org/redfish/v1/mockup/199">Schema</a></td>
+                    </tr>
+                  <tr>
+                      <td><b>Recursive Reflection:</b></td>
+                      <td><a target="blank" href="https://github.com/intelsdi-x/snap-plugin-collector-redfish/blob/master/redfish/client.go#L307-L367">Code</a></td>
+                    </tr>
+                  </table>
+                  <aside class="notes">
+                    <p>- Arbitrary representation.</p>
+                    <p>- Changing representation.</p>
+                    <p>- Runtime update.</p>
+                  </aside>
+              </section>
+            </section>
+            <section>
+              <h2>Reflection Caveats</h2>
+              <ul>
+                <li>Code analysis and refactoring tools</li>
+                <li>Runtime errors instead of compile-time errors</li>
+                <li>Inspection cost</li>
+                </ul>
+                <img src="media/gophers/gopher-think.png" />
+            </section>
+            <section>
+              <h2>Everything costs you</h2>
+              <h3>A line of code costs you</h2>
+               <blockquote cite="http://www.ashireporter.org/HomeInspection/Articles/Software-Errors-Cost-U-S-Economy-59-5-Billion-Annually/740">
+                 "software bugs cost the US economy $59.5 billion annually." 
+                 <br/><br/><small>&mdash; the Department of Commerce’s National Institute of Standards and Technology (NIST) 2003</small>
+               <br/><br/>
+               "Cambridge University study states software bugs cost economy $312 billion per year" 
+               <br/><br/><small>&mdash; Cambridge University Judge Business School 2013</small>
+               </blockquote>
+               <aside class="notes">
+                  <p>- Department of Commerce’s National Institute of Standards and Technology 2003</p>
+               </aside>
+            </section>
+            <section>
+               <h2>We're Gophers</h2>
+               <section>
+                  <h3>Productivity vs Performance</h3>
+                  <p class="miscItems">We didn't choose C or Assembly language, but Go!</p>
+                  <p class="fragment">Not Just Reflection!</p>
+                   <blockquote class="fragment">
+                    Often designers do complicated things that improve the capacity on a particular hardware platform 
+                    when it might actually be cheaper to buy more hardware.
+                    <br/></br>
+                    &mdash;Martin Fowler 2012
+                   </blockquote>
+                  <aside class="notes">
+                     <p>- Benchmark your code.</p>
+                     <p>- How much hit on the performance and if the performance is adequate.</p>
+                     <p>- Disruptive Innovation drives Performance. </p>
+                  </aside>
+               </section>
+            </section>
+            <section>
+              <h3>Conclusion</h3>
+               <blockquote>
+                Reflection is a perfect use case for transforming data into different formats. I have shown you how the reflection package helped me to write less code in less time. Avoiding the use of reflection would have increased the complexity of the code. Reducing complexity while preserving maintainability must always be a priority. Learn more about the reflection package and use it when it is the best tool for the job.
+               </blockquote>
+               <aside class="notes">
+                  <p>- Conclusion.</p>
+               </aside>
+            </section>
+            <section>
+               <h1>Thanks!</h1>
+               <section>
+                  <h3>Contact info</h3>
+                  <ul>
+                     <li>Twitter: <a class="orange" href="https://twitter.com/CandySmurfy">@CandySmurfy</a></li>
+                     <li>GitHub for slides: <a class="orange" href="https://github.com/candysmurf/GoReflectionTalk">github.com/candysmurf/GoReflectionTalk</a></li>
+                     <li> Email: <a class="orange" href="mailto:77.ears@gmail.com">77.ears@gmail.com</a></li>
+                  </ul>
+               </section>
+            </section>
+         </div>
+      </div>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.js"></script>
+      <script>
+         // Full list of configuration options available at:
+         // https://github.com/hakimel/reveal.js#configuration
+         Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: false,
+          slideNumber: true, 
+         
+         
+          transition: 'slide', // none/fade/slide/convex/concave/zoom
+         
+          // Optional reveal.js plugins
+          dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+          ]
+         });
+         
+      </script>
+   </body>
+</html>

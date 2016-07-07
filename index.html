@@ -148,20 +148,26 @@
             </section>
             <section>
                <h2>Reflection</h2>
-               <blockquote>
-                 Reflection in computing is the ability of a program to examine its own structure, particularly through types; it's a form of metaprogramming. 
-                 It's also a great source of confusion.
-                 <br/>&mdash; Rob Pike @The Laws of Reflection
-               </blockquote>
-               <blockquote cite="https://en.wikipedia.org/wiki/Reflection_(computer_programming)" style="color:gray">"
-               In computer science, reflection is the ability of a computer program to examine,
-               introspect, and modify its own structure and behavior at runtime."
-               <br/>&mdash;@Wikipedia
-               </blockquote>
-               <aside class="notes">
+               <section>
+                <h3>Definition</h3>
+                <blockquote>
+                 Reflection in computing is the ability of a program to examine its own structure, particularly through types; 
+                 it's a form of metaprogramming. 
+                 <br/><br/>&mdash; Rob Pike @The Laws of Reflection
+                </blockquote>
+                <aside class="notes">
                   <p>- inspection of meta-data, struct, fields, values, maps, interfaces, methods, functions at runtime without knowing the names</p>
                   <p>- instantiation of new objects and invocation of methods</p>
                </aside>
+               </section>
+               <section>
+                <h3>Quote</h3>
+                <blockquote>
+                 It's a powerful tool that should be used with care and avoided unless strictly necessary.
+                 <br/><br/>&mdash; Rob Pike @The Laws of Reflection
+                </blockquote>
+               </section>
+               </section>
             </section>
             <section>
               <h2>Reflection</h2>
@@ -173,7 +179,8 @@
               </aside>
             </section>
              <section>
-               <h2>Expert Told Us</h2>
+               <h2>Expert</h2>
+               <h3>Point of View</h3>
                 <blockquote>"
                 Compared to a disk seek or network transfer, the cost of reflection will be negligible."
                <br/><br/>&mdash; Dave Cheney
@@ -190,7 +197,7 @@
             </section>
             <section>
                <h2>Integrity</h2>
-               <h3 class="fragment">The default behavior of Reflection</h3>
+               <h3 class="fragment">REFLECTION PROVIDES INTEGRITY</h3>
                <ul>
                  <li>Read and write to memory with accuracy and consistency</li>
                  <li>Perform functional behaviors reliably</li> 
@@ -204,8 +211,8 @@
             <section>
                <h2>Readbility</h2>
                <h3 class="fragment">REFLECTION LET YOU WRITE SUCCINCT CODE</h3>
-               <p>Readbility is about understanding what the code is doing and the cost of the code.</p>
-               <pre class="fragment"><code>
+               <ul><li>Understanding what the code is doing and the cost of the code</li></ul>
+               <pre><code>
                 func MultiplyBy2(x int) int {
                   return x * 2
                 }
@@ -226,15 +233,16 @@
             </section>
             <section>
                <h2>Simplicity</h2>
-               <p>
-                    Simplicity is about Efficiency and Not wasting effort
-               </p>
+               <h3 class="fragment">Reflect let you write reusable code for any type</h3>
+               <ul>
+                   <li>Efficiency and Not wasting effort</li>
+               </ul>
                <br/>
                <img src="media/gophers/complexity.png" height="200" />
                <blockquote class="fragment orange">
                  <span class="fragment highlight-blue">
-                  Reflection let you write code for Data Transformation. Otherwise, you'll
-                  have to write code for every type.
+                  Without Reflection, you'll have to write different code for every type when doing 
+                  data transformation or resource injection.
                  </span>
                </blockquote>
                <aside class="notes">

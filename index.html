@@ -87,7 +87,7 @@
                <p>
                   <small>Created by <a href="https://github.com/candysmurf">Emily Gu</a> / <a href="https://twitter.com/CandySmurfy">@CandySmurfy</a></small>
                </p>
-               <p><small>https://github.com/candysmurf/GoReflectionTalk</small></p>
+               <p><small>https://candysmurf.github.io/GoReflectionTalk</small></p>
                <aside class="notes">
                   <p>- I'm working at Intel SDI-X group</p>
                   <p>- My first time in GohpherCon.</p>
@@ -124,7 +124,7 @@
             </section> 
             <section>
               <h2>About Me</h2>
-              <h3 class="fragment">Today is about Reflection</h3>
+              <h3 class="fragment">Today is about Reflection in Go</h3>
                 <p align="left">
                  I currently work for Intel Corporation as a cloud software engineer in the Software Defined Infrastructure (SDI-X) Emerging Tech group.
                 </p>
@@ -136,8 +136,36 @@
                </p>
             </section>
             <section>
+              <h2>Why I choose to talk about Reflection</h2>
+              <section>
+                <h3>My Project is Snap</h3>
+                <img src="media/gophers/snap-job.png" height="500"/>
+              </section>
+              <section>
+                <h3>Write Snap Plugins</h3>
+                <img src="media/gophers/problem.png" />
+               </section>
+            </section>
+            <section>
+               <h2>Reflection</h2>
+               <blockquote>
+                 Reflection in computing is the ability of a program to examine its own structure, particularly through types; it's a form of metaprogramming. 
+                 It's also a great source of confusion.
+                 <br/>&mdash; Rob Pike @The Laws of Reflection
+               </blockquote>
+               <blockquote cite="https://en.wikipedia.org/wiki/Reflection_(computer_programming)" style="color:gray">"
+               In computer science, reflection is the ability of a computer program to examine,
+               introspect, and modify its own structure and behavior at runtime."
+               <br/>&mdash;@Wikipedia
+               </blockquote>
+               <aside class="notes">
+                  <p>- inspection of meta-data, struct, fields, values, maps, interfaces, methods, functions at runtime without knowing the names</p>
+                  <p>- instantiation of new objects and invocation of methods</p>
+               </aside>
+            </section>
+            <section>
               <h2>Reflection</h2>
-              <h3>????</h3>
+              <h3>OK ???? NO</h3>
               <img src="media/gophers/gopher-ok-no.png" />
               <aside class="notes">
                 <p>- Reflection is perceived to not be used due to its performance.</p>
@@ -191,10 +219,9 @@
                  <br/><small>&mdash; Alvaro Videla 2015</small>
               </blockquote>
                <aside class="notes">
-                  <p>- first one can be picked up by anyone even a non technical person.</p>
-                  <p>- second one is faster but it's hard to understand.</p>
-                  <p>- should we sacrify readability for the performance?</p>
-                  <p>- short is more easy to read</p>
+                  <p>- No more no less but clear and readable</p>
+                  <p>- Less LOC does not mean it's readable</p>
+                  <p>- More lines of code could help to read</p>
                </aside>
             </section>
             <section>
@@ -217,18 +244,6 @@
                </aside>
             </section> 
             <section>
-               <h2>Reflection</h2>
-               <section data-background="media/vectors/innovation_scalability.svg">
-               <blockquote cite="https://en.wikipedia.org/wiki/Reflection_(computer_programming)">"
-               In computer science, reflection is the ability of a computer program to examine,
-               introspect, and modify its own structure and behavior at runtime."
-               <br/><br/>&mdash;@Wikipedia
-               </blockquote>
-               <aside class="notes">
-                  <p>- inspection of meta-data, struct, fields, values, maps, interfaces, methods, functions at runtime without knowing the names</p>
-                  <p>- instantiation of new objects and invocation of methods</p>
-               </aside>
-              </section>
               <section data-background="media/vectors/innovation_scalability.svg">
                 <h3>Reflection - Key Enabler</h3>
                 <ul>
@@ -257,7 +272,7 @@
               </section>
             </section>
             <section data-background="media/vectors/innovation_scalability.svg"/>
-                <h2>Snug into Reflection</h2>
+                <h2>Dive into Reflection</h2>
                 <section>
                     <h3>Reflection Basics</h3>
                     <ul>
@@ -293,21 +308,25 @@
                     <a target="blank" href="https://github.com/candysmurf/GoReflectionTalk"><img src="media/gophers/22.png"  height="200px" width="350px"/></a>
                 </section>
                 <section>
-                    <blockquote>
+                    <blockquote style="color:gray">
                       Go Reflection package provides robust operations on types and values during the run-time.
                     </blockquote>
-                    <br/>
-                    <ul>
-                      <li><a href="https://blog.golang.org/laws-of-reflection">Follow the Law of Reflection</a></li>
-                      <li><a href="https://jimmyfrasche.github.io/go-reflection-codex/">Go Reflection Codex</a></li>
-                    </ul>
+                    <blockquote class="fragment" style="color:orange">
+                        We have infinite Types but finite Kinds.
+                    </blockquote>
+                    <blockquote class="fragment" style="color:gray">
+                      An empty interface can hold any value and contains all the information about a value.
+                    </blockquote>
+                    <blockquote class="fragment" style="color:orange">
+                      Addressable variables may be modified.
+                    </blockquote>
                 </section>
               </section>
               <section>
                <h2>Reflection Case Study</h2>
                <section>
                   <h3>Snap Plugin Framework</h3>
-                 <img src="media/gophers/snap-plugin.png" height="500"/>
+                 <img src="media/gophers/snap-plugin.png" height="400"/>
                   <aside class="notes">
                      <p>- Collector, Processor, Publishers.</p>
                   </aside>
@@ -315,7 +334,6 @@
                <section data-background="media/vectors/innovation_code.svg">
                     <h3>snap-plugin-collector-elasticsearch</h3>
                     <table>
-                      <tr><th>Input</th></tr>
                       <tr><td><a target="blank" href="http://codebeautify.org/jsonviewer/cb292d2c">Elasticsearch Node Stats JSON</a></td></tr>
                     </table>
                     <pre><code>
@@ -1579,10 +1597,10 @@
                <section data-background="media/vectors/innovation_code.svg">
                     <h3>snap-plugin-collector-elasticsearch</h3>
                     <table align="left">
-                      <tr><th>Output</th></tr>
                       <tr><td>/intel/elastcisearch/node/*/indices/query_cache/hit_count</td></tr>
-                      <tr><td>/intel/elastcisearch/node/*/os/mem/used_percent</td></tr>
+                      <tr><td>/intel/elastcisearch/node/*/os/mem/total_in_bytes</td></tr>
                       <tr><td>/intel/elastcisearch/node/*/os/swap/total_in_bytes</td></tr>
+                      <tr><td>/intel/elastcisearch/node/*/fs/data/total_in_bytes</td></tr>
                       <tr><td>/intel/elastcisearch/node/*/jvm/mem/pools/young/used_in_bytes</td></tr>
                       <tr><td>/intel/elastcisearch/node/*/jvm/mem/pools/old/max_in_bytes</td></tr>
                       <tr><td>/intel/elastcisearch/node/*/thread_pool/fetch_shard_started/threads</td></tr>
@@ -1670,16 +1688,15 @@
             <section>
                <h2>We're Gophers</h2>
                <section>
-                  <h3>Productivity vs. Performance</h3>
-                  <p class="miscItems">We didn't choose C or Assembly language, but Go!</p>
-                  <p class="fragment">Not Just Reflection!</p>
-                   <blockquote class="fragment">
-                    Often designers do complicated things that improve the capacity on a particular hardware platform 
-                    when it might actually be cheaper to buy more hardware.
-                    <br/></br>
-                    &mdash;Martin Fowler 2012
+                  <h3>Productivity and Performance</h3>
+                  <p class="miscItems">Although we didn't choose C or Assembly language, but Go!</p>
+                  <p class="fragment">Everything <span class="fragment highlight-red">costs</span> you, Not Just Reflection!</p>
+                   <blockquote class="fragment" cite="http://whatis.techtarget.com/definition/computational-reflection" style="color:gray">
+                    The capacity for reflection is one of the most important components of artificial intelligence ( AI )...
+                    a reflective program has the ability to think about what is happening and to alter itself to address the circumstances.
                    </blockquote>
                   <aside class="notes">
+                     <p>- Let us advance the reflection. </p>
                      <p>- Benchmark your code.</p>
                      <p>- How much hit on the performance and if the performance is adequate.</p>
                      <p>- Disruptive Innovation drives Performance. </p>
@@ -1718,8 +1735,8 @@
                   <h3>Acknowledgement</h3>
                   <ul>
                      <li>William Kennedy @goinggodotnet</li>
-                     <li>Steven Francia @spf13</li>
                      <li>Snap Team @github.com/intelsdi-x/snap</li>
+                     <li>Images from http://intelsdi-x.github.io/snap</li>
                      <li>reveal.js template</li>
                   </ul>
                </section>

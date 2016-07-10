@@ -41,9 +41,9 @@ Example shows how to reflect over a struct type pointer that is stored inside an
 ### Inspection / Decoding
 
 Example shows how to inspect a structs fields and display the field name, type and value.  
-[Struct Types](code/inspect/struct/struct.go) ([Go Playground](https://play.golang.org/p/ahHLMtun9y))  
+[Struct Types](code/inspect/struct/struct.go) ([Go Playground](https://play.golang.org/p/-9neCUjA9N))  
 
 Example shows how to use reflection to decode an integer.  
-[Integers](code/interface/integer/integer.go) ([Go Playground](https://play.golang.org/p/LmVkzpm57a))  
+[Integers](code/interface/integer/integer.go) ([Go Playground](https://play.golang.org/p/Suyx2xlP0s))  
 ___
 All material is licensed under the [Apache License Version 2.0, June 2016](http://www.apache.org/licenses/LICENSE-2.0).

@@ -1,8 +1,7 @@
 // All material is licensed under the Apache License Version 2.0, January 2016
 // http://www.apache.org/licenses/LICENSE-2.0
 
-// Example shows how to inspect a structs fields and display the field
-// name, type and value.
+// Example shows how reflection provides readability and simplicity.
 package main
 
 import (

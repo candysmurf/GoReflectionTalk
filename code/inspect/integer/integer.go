@@ -1,7 +1,7 @@
 // All material is licensed under the Apache License Version 2.0, January 2016
 // http://www.apache.org/licenses/LICENSE-2.0
 
-// Example shows how to use reflection to decode an integer.
+// Example shows how reflection provides integrity.
 package main
 
 import (
@@ -38,15 +38,12 @@ func decodeInt(v interface{}, number *int) error {
 
 	case reflect.Int:
 		val.SetInt(rv.Int())
-		return nil
 
 	case reflect.Uint:
 		val.SetInt(int64(rv.Uint()))
-		return nil
 
 	case reflect.Float32:
 		val.SetInt(int64(rv.Float()))
-		return nil
 
 	case reflect.Bool:
 		if rv.Bool() {
@@ -55,7 +52,6 @@ func decodeInt(v interface{}, number *int) error {
 		}
 
 		val.SetInt(0)
-		return nil
 
 	case reflect.String:
 		i, err := strconv.ParseInt(rv.String(), 0, val.Type().Bits())
@@ -64,11 +60,12 @@ func decodeInt(v interface{}, number *int) error {
 		}
 
 		val.SetInt(i)
-		return nil
 
 	default:
 		return fmt.Errorf("expected type '%s', got unconvertible type '%s'", val.Type(), rv.Type())
 	}
+
+	return nil
 }
 
 // getKind provides support for identifying predeclared numeric

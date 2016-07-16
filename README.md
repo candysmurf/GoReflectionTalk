@@ -13,37 +13,37 @@ http://blog.golang.org/laws-of-reflection
 ### Basics
 
 Example shows how to reflect over a struct type value.  
-[Struct Types](code/basics/struct/struct.go) ([Go Playground](https://play.golang.org/p/MfWwc8aHdY))    
+[Struct Types](code/basics/struct/struct.go) ([Go Playground](https://play.golang.org/p/_b73a7uUOx))    
 
 Example shows how to reflect over a slice of struct type values.  
-[Slices](code/basics/slice/slice.go) ([Go Playground](https://play.golang.org/p/MirNCG8kUa))  
+[Slices](code/basics/slice/slice.go) ([Go Playground](https://play.golang.org/p/S4IKEOvbHG))  
 
 Example shows how to reflect over a map of struct type values.  
-[Maps](code/basics/map/map.go) ([Go Playground](https://play.golang.org/p/mfDjDz4UDt))  
+[Maps](code/basics/map/map.go) ([Go Playground](https://play.golang.org/p/3j6gT94Ji3))  
 
 Example shows how to reflect over a struct type pointer.  
-[Pointers](code/basics/pointer/pointer.go) ([Go Playground](https://play.golang.org/p/vYbCRHH689))  
+[Pointers](code/basics/pointer/pointer.go) ([Go Playground](https://play.golang.org/p/2zMmWmSNgY))  
 
 ### Interfaces
 
 Example shows how to reflect over a struct type value that is stored inside an interface value.  
-[Struct Types](code/interface/struct/struct.go) ([Go Playground](https://play.golang.org/p/AEy28qc5-e))  
+[Struct Types](code/interface/struct/struct.go) ([Go Playground](https://play.golang.org/p/vdOHbCHO-c))  
 
 Example shows how to reflect over a slice of struct type values that are stored inside an interface value.  
-[Slices](code/interface/slice/slice.go) ([Go Playground](https://play.golang.org/p/-waL0oOrCb))  
+[Slices](code/interface/slice/slice.go) ([Go Playground](https://play.golang.org/p/YXeogyWr-H))  
 
 Example shows how to reflect over a map of struct type values that are stored inside an interface value.  
-[Maps](code/interface/map/map.go) ([Go Playground](https://play.golang.org/p/lB_f0iu8Ax))  
+[Maps](code/interface/map/map.go) ([Go Playground](https://play.golang.org/p/mZIYNXBdF-))  
 
 Example shows how to reflect over a struct type pointer that is stored inside an interface value.  
-[Pointers](code/interface/pointer/pointer.go) ([Go Playground](https://play.golang.org/p/bv_V3Lv8yD))  
+[Pointers](code/interface/pointer/pointer.go) ([Go Playground](https://play.golang.org/p/7XUMzJ3hql))  
 
 ### Inspection / Decoding
 
 Example shows how to inspect a structs fields and display the field name, type and value.  
-[Struct Types](code/inspect/struct/struct.go) ([Go Playground](https://play.golang.org/p/-9neCUjA9N))  
+[Struct Types](code/inspect/struct/struct.go) ([Go Playground](https://play.golang.org/p/71xtyS_sts))  
 
 Example shows how to use reflection to decode an integer.  
-[Integers](code/interface/integer/integer.go) ([Go Playground](https://play.golang.org/p/Suyx2xlP0s))  
+[Integers](code/interface/integer/integer.go) ([Go Playground](https://play.golang.org/p/q-EIfJZUI-))  
 ___
 All material is licensed under the [Apache License Version 2.0, June 2016](http://www.apache.org/licenses/LICENSE-2.0).
